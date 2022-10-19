@@ -3,11 +3,11 @@ package com.example.test1comp1011section2200495149;
 import java.util.Arrays;
 import java.util.List;
 
-public class NetfilxShow {
+public class NetflixShow {
     private int showId;
     private String type, title, rating, director, cast;
 
-    public NetfilxShow(int showId, String type, String title, String rating, String director, String cast) {
+    public NetflixShow(int showId, String type, String title, String rating, String director, String cast) {
         setShowId(showId);
         setType(type);
         setTitle(title);
