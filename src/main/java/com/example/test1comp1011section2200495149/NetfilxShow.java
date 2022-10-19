@@ -61,8 +61,16 @@ public class NetfilxShow {
         return rating;
     }
 
+    public static List<String> validRatings() {
+        return Arrays.asList("PG-13", "R", "TV-14", "TV-G", "TV-MA", "TV-Y", "TV-Y7");
+    }
     public void setRating(String rating) {
-        this.rating = rating;
+        List<String> validRatings = validRatings();
+        if (validRatings.contains(rating)) {
+            this.rating = rating;
+        }else {
+            throw new IllegalArgumentException("Valid ratings are: " + validRatings);
+        }
     }
 
     public String getDirector() {
