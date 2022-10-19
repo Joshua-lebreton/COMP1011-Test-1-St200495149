@@ -31,8 +31,8 @@
          <bottom>
             <HBox spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <CheckBox fx:id="movieCheckBox" mnemonicParsing="false" prefHeight="19.0" prefWidth="73.0" text="Movies" />
-                  <CheckBox fx:id="tvShowCheckBox" mnemonicParsing="false" prefHeight="19.0" prefWidth="94.0" text="TV Shows" />
+                  <CheckBox fx:id="movieCheckBox" mnemonicParsing="false" onAction="#checkBoxChanged" prefHeight="19.0" prefWidth="73.0" text="Movies" />
+                  <CheckBox fx:id="tvShowCheckBox" mnemonicParsing="false" onAction="#checkBoxChanged" prefHeight="19.0" prefWidth="94.0" text="TV Shows" />
                   <ComboBox fx:id="ratingComboBox" prefWidth="150.0" promptText="Select Rating">
                      <HBox.margin>
                         <Insets />

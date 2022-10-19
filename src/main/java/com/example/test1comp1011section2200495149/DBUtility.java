@@ -11,22 +11,36 @@ public class DBUtility {
     private static String pw = "student";
     private static String connectUrl = "jdbc:mysql://127.0.0.1:3306/javatest";
 
-    public static ArrayList<NetflixShow> getNetflixShowsFromDB()
+    public static ArrayList<NetflixShow> getNetflixShowsFromDB(boolean movieSelected, boolean tvSelected)
     {
+
         ArrayList<NetflixShow> netflixShows = new ArrayList<>();
+        String sql = "";
+        if(movieSelected && tvSelected){
+            sql =   "SELECT showId, type, title, rating, director, cast " +
+                    "FROM netflix " +
+                    "WHERE type = 'Movie' OR type = 'TV Show';";
+        }else if(tvSelected){
+            sql =   "SELECT showId, type, title, rating, director, cast " +
+                    "FROM netflix " +
+                    "WHERE type = 'TV Show';";
+        }else if(movieSelected){
+            sql =   "SELECT showId, type, title, rating, director, cast " +
+                    "FROM netflix " +
+                    "WHERE type = 'Movie';";
+        }else{
+            sql =   "SELECT showId, type, title, rating, director, cast " +
+                    "FROM netflix " +
+                    "WHERE type = '';";
+        }
 
-        String sql =    "SELECT showId, type, title, rating, director, cast \n" +
-                        "FROM netflix;";
 
-        try(
-                Connection conn = DriverManager.getConnection(connectUrl,user,pw);
 
-                Statement statement = conn.createStatement();
 
-                ResultSet dbResults = statement.executeQuery(sql);
-        )
+        try(Connection conn = DriverManager.getConnection(connectUrl,user,pw);
+            Statement statement = conn.createStatement();
+            ResultSet dbResults = statement.executeQuery(sql);)
         {
-
             while (dbResults.next())
             {
                 int showId = dbResults.getInt("showid");
