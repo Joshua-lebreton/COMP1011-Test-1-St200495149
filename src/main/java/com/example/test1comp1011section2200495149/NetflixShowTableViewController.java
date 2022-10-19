@@ -52,5 +52,7 @@ public class NetflixShowTableViewController implements Initializable {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         showTable.getItems().addAll(DBUtility.getNetflixShowsFromDB());
+
+        ratingComboBox.getItems().addAll(DBUtility.getRatingsFromDB());
     }
 }
