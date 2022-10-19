@@ -49,7 +49,12 @@ public class NetfilxShow {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        if(title.length() >= 2) {
+            this.title = title;
+        }
+        else{
+            throw new IllegalArgumentException("Title must be at least 2 characters long");
+        }
     }
 
     public String getRating() {
