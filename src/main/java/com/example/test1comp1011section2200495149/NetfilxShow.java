@@ -78,7 +78,11 @@ public class NetfilxShow {
     }
 
     public void setDirector(String director) {
-        this.director = director;
+        if(director.length() >= 5){
+            this.director = director;
+        }else {
+            throw new IllegalArgumentException("Director must be at least 5 characters long");
+        }
     }
 
     public String getCast() {
