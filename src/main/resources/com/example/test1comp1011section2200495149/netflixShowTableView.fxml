@@ -10,21 +10,21 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test1comp1011section2200495149.NetflixShowTableViewController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test1comp1011section2200495149.NetflixShowTableViewController">
    <children>
       <BorderPane layoutX="225.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <TableView fx:id="showTable" prefHeight="360.0" prefWidth="580.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="showIdColumn" prefWidth="96.0" text="ShowId" />
-                <TableColumn fx:id="typeColumn" prefWidth="96.0" text="Type" />
-                  <TableColumn fx:id="titleColumn" prefWidth="96.0" text="Title" />
-                  <TableColumn fx:id="ratingColumn" prefWidth="96.0" text="Rating" />
-                  <TableColumn fx:id="directorColumn" prefWidth="96.0" text="Director" />
-                  <TableColumn fx:id="castColumn" prefWidth="96.0" text="Cast" />
+                <TableColumn fx:id="showIdColumn" prefWidth="130.0" text="ShowId" />
+                <TableColumn fx:id="typeColumn" prefWidth="130.0" text="Type" />
+                  <TableColumn fx:id="titleColumn" prefWidth="130.0" text="Title" />
+                  <TableColumn fx:id="ratingColumn" prefWidth="130.0" text="Rating" />
+                  <TableColumn fx:id="directorColumn" prefWidth="130.0" text="Director" />
+                  <TableColumn fx:id="castColumn" prefWidth="130.0" text="Cast" />
               </columns>
                <BorderPane.margin>
-                  <Insets left="12.0" right="12.0" />
+                  <Insets left="10.0" right="10.0" />
                </BorderPane.margin>
             </TableView>
          </center>
