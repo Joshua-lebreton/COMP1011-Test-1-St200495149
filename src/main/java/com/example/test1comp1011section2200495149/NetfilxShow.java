@@ -1,5 +1,8 @@
 package com.example.test1comp1011section2200495149;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class NetfilxShow {
     private int showId;
     private String type, title, rating, director, cast;
@@ -29,9 +32,16 @@ public class NetfilxShow {
     public String getType() {
         return type;
     }
-
+    public static List<String> validTypes() {
+        return Arrays.asList("Movie", "TV Show");
+    }
     public void setType(String type) {
-        this.type = type;
+        List<String> validTypes = validTypes();
+        if (validTypes.contains(type)) {
+            this.type = type;
+        }else {
+            throw new IllegalArgumentException("Valid types are: " + validTypes);
+        }
     }
 
     public String getTitle() {
