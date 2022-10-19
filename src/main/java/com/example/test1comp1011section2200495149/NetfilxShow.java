@@ -90,6 +90,10 @@ public class NetfilxShow {
     }
 
     public void setCast(String cast) {
-        this.cast = cast;
+        if(cast.length() >= 6){
+            this.cast = cast;
+        }else {
+            throw new IllegalArgumentException("Cast must be at least 6 characters long");
+        }
     }
 }
