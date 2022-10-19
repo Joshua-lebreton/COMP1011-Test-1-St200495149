@@ -60,13 +60,12 @@ public class NetflixShowTableViewController implements Initializable {
         ratingComboBox.getItems().addAll(DBUtility.getRatingsFromDB());
 
         numberOfShowsLabel.setText("Number of movies/shows : " + showTable.getItems().size());
-        System.out.println(""+ movieCheckBox.isSelected() + tvShowCheckBox.isSelected());
     }
 
     @FXML
     private void checkBoxChanged(ActionEvent event) throws IOException {
-        System.out.println(""+ movieCheckBox.isSelected() + tvShowCheckBox.isSelected());
         showTable.getItems().clear();
         showTable.getItems().addAll(DBUtility.getNetflixShowsFromDB(movieCheckBox.isSelected(),tvShowCheckBox.isSelected()));
+        numberOfShowsLabel.setText("Number of movies/shows : " + showTable.getItems().size());
     }
 }
