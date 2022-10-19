@@ -56,5 +56,11 @@ public class NetflixShowTableViewController implements Initializable {
         ratingComboBox.getItems().addAll(DBUtility.getRatingsFromDB());
 
         numberOfShowsLabel.setText("Number of movies/shows : " + showTable.getItems().size());
+
+        movieCheckBox.setSelected(true);
+        tvShowCheckBox.setSelected(true);
+
+
+
     }
 }
